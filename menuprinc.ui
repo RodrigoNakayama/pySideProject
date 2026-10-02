@@ -22,7 +22,7 @@
      <widget class="QFrame" name="leftContainer">
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>9</width>
         <height>16777215</height>
        </size>
       </property>
@@ -82,8 +82,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>156</width>
-               <height>434</height>
+               <width>99</width>
+               <height>422</height>
               </rect>
              </property>
              <attribute name="label">
