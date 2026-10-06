@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>menu.png</file>
     <file>email.png</file>
     <file>logo_sysdev_240px.png</file>
     <file>whatsApp.png</file>

@@ -34,7 +34,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.leftContainer = QFrame(self.centralwidget)
         self.leftContainer.setObjectName(u"leftContainer")
-        self.leftContainer.setMaximumSize(QSize(200, 16777215))
+        self.leftContainer.setMinimumSize(QSize(0, 0))
+        self.leftContainer.setMaximumSize(QSize(9, 16777215))
         self.leftContainer.setFrameShape(QFrame.Shape.StyledPanel)
         self.leftContainer.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.leftContainer)
@@ -72,7 +73,7 @@ class Ui_MainWindow(object):
 "")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 156, 434))
+        self.page.setGeometry(QRect(0, 0, 99, 422))
         self.verticalLayout_4 = QVBoxLayout(self.page)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.btn_Home = QPushButton(self.page)
@@ -111,7 +112,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"Page 1")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 156, 434))
+        self.page_2.setGeometry(QRect(0, 0, 46, 396))
         self.toolBox.addItem(self.page_2, u"Page 2")
 
         self.horizontalLayout_3.addWidget(self.toolBox)
@@ -134,6 +135,17 @@ class Ui_MainWindow(object):
         self.frmHeader.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.frmHeader)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.btAlternar = QPushButton(self.frmHeader)
+        self.btAlternar.setObjectName(u"btAlternar")
+        self.btAlternar.setMinimumSize(QSize(32, 32))
+        self.btAlternar.setStyleSheet(u"image: url(:/icons/menu.png);")
+        icon = QIcon()
+        icon.addFile(u":/icons/menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btAlternar.setIcon(icon)
+        self.btAlternar.setIconSize(QSize(32, 32))
+
+        self.horizontalLayout_2.addWidget(self.btAlternar)
+
         self.label_2 = QLabel(self.frmHeader)
         self.label_2.setObjectName(u"label_2")
 
@@ -370,8 +382,8 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.toolBox.setCurrentIndex(0)
-        self.Pages.setCurrentIndex(3)
-        self.tabWidget.setCurrentIndex(1)
+        self.Pages.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -386,6 +398,7 @@ class Ui_MainWindow(object):
         self.btn_Sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QCoreApplication.translate("MainWindow", u"Page 1", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"Page 2", None))
+        self.btAlternar.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"987654321", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/email.png\"/></p></body></html>", None))

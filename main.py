@@ -1,8 +1,10 @@
-from PySide6.QtCore import QCoreApplication
+from PySide6 import QtCore
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import (QApplication, QMainWindow)
 from ui_main import Ui_MainWindow
 import sys
+from uiFuncProd import consulta_cnpj
+from database import Database
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -17,18 +19,33 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_Sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
 
     def leftContainer(self):
-        width = self.left_container.width()
+        width = self.leftContainer.width()
         if width == 9:
             newWidth = 200
         else:
             newWidth = 9
 
-        self.animation = Qtcore.QProperyAnimation(self.left_container, b"maximumWidth")
+        self.animation = QtCore.QPropertyAnimation(self.left_container, b"maximumWidth")
         self.animation.setDuration(500)
         self.animation.setStartValue(width)
         self.animation.setEndValue(newWidth)
         self.animationsetEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
+
+    def consultApi(self):
+        campos = consulta_cnpj(self.txt_cnpj.text())
+
+        self.txt_nomeEmpresarial.setText(campos[0])
+        self.txt_logradouro.setText(campos[1])
+        self.txt_numero.setText(campos[2])
+        self.txt_complemento.setText(campos[3])
+        self.txt_bairro.setText(campos[4])
+        self.txt_municipio.setText(campos[5])
+        self.txt_uf.setText(campos[6])
+        self.txt_cep.setText(campos[7].replace('.', '').replace('-', ''))
+        self.txt_telefone.setText(campos[8].replace('(', '').replace('-', '').replace(')', ''))
+        self.txt_email.setText(campos[9])
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

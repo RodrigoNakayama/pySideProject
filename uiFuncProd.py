@@ -14,4 +14,4 @@ def consulta_cnpj(cnpj):
 
     return (resp['nome'], resp['logradouro'], resp['numero'], resp['complemento'], resp['bairro'], resp['municipio'], resp['uf'], resp['telefone'], resp['email'])
 
-consulta_cnpj('07591060000175')
+consulta_cnpj('02957518001387')
