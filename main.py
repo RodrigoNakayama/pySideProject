@@ -11,25 +11,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle("SysDev - Sistema de cadastro de empresas")
+        
         appIcon = QIcon(u"")
         self.setWindowIcon(appIcon)
+
         self.btn_Home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgHome))
         self.btn_Cadastrar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgCadastrar))
         self.btn_Contato.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgContatos))
         self.btn_Sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pgSobre))
 
-    def leftContainer(self):
+        self.btAlternar.clicked.connect(self.alternar_menu)
+
+    def alternar_menu(self):
         width = self.leftContainer.width()
         if width == 9:
             newWidth = 200
         else:
             newWidth = 9
 
-        self.animation = QtCore.QPropertyAnimation(self.left_container, b"maximumWidth")
+        self.animation = QtCore.QPropertyAnimation(self.leftContainer, b"maximumWidth")
         self.animation.setDuration(500)
         self.animation.setStartValue(width)
         self.animation.setEndValue(newWidth)
-        self.animationsetEasingCurve(QtCore.QEasingCurve.InOutQuart)
+        self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
 
     def consultApi(self):
@@ -52,4 +56,3 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     app.exec()
-

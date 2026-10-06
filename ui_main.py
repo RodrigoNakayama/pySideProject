@@ -112,7 +112,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"Page 1")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 46, 396))
+        self.page_2.setGeometry(QRect(0, 0, 16, 422))
         self.toolBox.addItem(self.page_2, u"Page 2")
 
         self.horizontalLayout_3.addWidget(self.toolBox)
@@ -137,8 +137,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.btAlternar = QPushButton(self.frmHeader)
         self.btAlternar.setObjectName(u"btAlternar")
-        self.btAlternar.setMinimumSize(QSize(32, 32))
-        self.btAlternar.setStyleSheet(u"image: url(:/icons/menu.png);")
         icon = QIcon()
         icon.addFile(u":/icons/menu.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btAlternar.setIcon(icon)

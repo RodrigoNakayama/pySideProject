@@ -183,8 +183,8 @@ QPushButton {
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>46</width>
-               <height>396</height>
+               <width>16</width>
+               <height>422</height>
               </rect>
              </property>
              <attribute name="label">
@@ -219,15 +219,6 @@ QPushButton {
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="btAlternar">
-            <property name="minimumSize">
-             <size>
-              <width>32</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">image: url(:/icons/menu.png);</string>
-            </property>
             <property name="text">
              <string/>
             </property>
